@@ -45,8 +45,6 @@ builder.Services.AddSwaggerGen(option =>
     });
 });
 
-builder.Services.AddSignalR();
-
 builder.Services.AddDbContext<IdentityContext>();
 builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
