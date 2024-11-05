@@ -39,6 +39,17 @@
                               HeaderIcon="{wuc:BitmapIcon Source=Assets/Fluent/update.png}"
                               IsClickEnabled="True"
                               Tag="AppUpdateSettingPage" />
+            <wuc:SettingsCard x:Name="ConnectionSetting"
+                              Command="{x:Bind ViewModel.GoToSettingPageCommand}"
+                              CommandParameter="{Binding ElementName=ConnectionSetting}"
+                              Description="Configure connection to server"
+                              Header="Connection"
+                              IsClickEnabled="True"
+                              Tag="ConnectionSettingPage" >
+                <wuc:SettingsCard.HeaderIcon>
+                    <FontIcon Glyph="&#xE703;"/>
+                </wuc:SettingsCard.HeaderIcon>
+            </wuc:SettingsCard>
             <wuc:SettingsCard x:Name="AboutSetting"
                               Command="{x:Bind ViewModel.GoToSettingPageCommand}"
                               CommandParameter="{Binding ElementName=AboutSetting}"

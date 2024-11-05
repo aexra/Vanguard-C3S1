@@ -29,6 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Views\Settings\ConnectionSettingPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
 	<Folder Include="Models\" />
   </ItemGroup>
 
@@ -53,9 +57,15 @@
     <PackageReference Include="WinUICommunity.Components" Version="6.9.0" />
     <PackageReference Include="WinUICommunity.Core" Version="6.9.0" />
     <PackageReference Include="WinUICommunity.LandingPages" Version="6.9.0" />
+    <PackageReference Include="YamlDotNet" Version="16.1.3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Vanguard.DataAccess\Vanguard.DataAccess.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Settings\ConnectionSettingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!-- 

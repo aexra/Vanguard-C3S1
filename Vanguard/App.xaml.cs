@@ -1,4 +1,6 @@
-﻿namespace Vanguard;
+﻿using Vanguard.Services;
+
+namespace Vanguard;
 
 public partial class App : Application
 {
@@ -36,11 +38,14 @@ public partial class App : Application
             return json;
         });
 
+        services.AddSingleton<YamlConfigService>();
+
         services.AddTransient<MainViewModel>();
         services.AddTransient<GeneralSettingViewModel>();
         services.AddTransient<ThemeSettingViewModel>();
         services.AddTransient<AppUpdateSettingViewModel>();
         services.AddTransient<AboutUsSettingViewModel>();
+        services.AddTransient<ConnectionSettingViewModel>();
         services.AddTransient<HomeLandingViewModel>();
         services.AddTransient<SettingsViewModel>();
         services.AddTransient<BreadCrumbBarViewModel>();

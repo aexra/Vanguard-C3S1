@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vanguard", "Vanguard\Vanguard.csproj", "{2B5CA07B-E56C-4469-8013-809966E696C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vanguard", "Vanguard\Vanguard.csproj", "{2B5CA07B-E56C-4469-8013-809966E696C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A2797541-95FD-4A23-85E6-B907CA21904C}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vanguard.Web", "Vanguard.Web\Vanguard.Web.csproj", "{E287B4A0-FE34-46CE-BDD4-2B39C6591CE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vanguard.Web", "Vanguard.Web\Vanguard.Web.csproj", "{E287B4A0-FE34-46CE-BDD4-2B39C6591CE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vanguard.DataAccess", "Vanguard.DataAccess\Vanguard.DataAccess.csproj", "{F7D8EDB7-2828-4DEF-AEEC-2723C7F3BC19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vanguard.DataAccess", "Vanguard.DataAccess\Vanguard.DataAccess.csproj", "{F7D8EDB7-2828-4DEF-AEEC-2723C7F3BC19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +28,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2B5CA07B-E56C-4469-8013-809966E696C8}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{2B5CA07B-E56C-4469-8013-809966E696C8}.Debug|Any CPU.Build.0 = Debug|x64
+		{2B5CA07B-E56C-4469-8013-809966E696C8}.Debug|Any CPU.Deploy.0 = Debug|x64
 		{2B5CA07B-E56C-4469-8013-809966E696C8}.Debug|ARM64.ActiveCfg = Debug|ARM64
 		{2B5CA07B-E56C-4469-8013-809966E696C8}.Debug|ARM64.Build.0 = Debug|ARM64
 		{2B5CA07B-E56C-4469-8013-809966E696C8}.Debug|ARM64.Deploy.0 = Debug|ARM64
