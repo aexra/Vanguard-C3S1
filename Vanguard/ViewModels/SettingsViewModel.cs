@@ -17,8 +17,6 @@ public partial class SettingsViewModel : ObservableObject
         {
             Type pageType = Application.Current.GetType().Assembly.GetType($"Vanguard.Views.{item.Tag}");
 
-            System.Diagnostics.Debug.WriteLine(pageType == null);
-
             if (pageType != null)
             {
                 SlideNavigationTransitionInfo entranceNavigation = new SlideNavigationTransitionInfo();

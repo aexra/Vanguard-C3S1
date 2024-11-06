@@ -20,8 +20,18 @@
                 
                 <views:BreadcrumbBarUserControl SingleItem="{x:Bind BreadCrumbBarItemText, Mode=OneWay}" />
 
-                
-                
+                <wuc:SettingsCard
+                        Header="Server IP"
+                        Description="Set web server IP">
+                    
+                    <wuc:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xF6FA;" />
+                    </wuc:SettingsCard.HeaderIcon>
+
+                    <TextBox/>
+
+                </wuc:SettingsCard>
+
             </StackPanel>
         </ScrollView>
     </Grid>

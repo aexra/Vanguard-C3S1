@@ -63,6 +63,11 @@
     <ProjectReference Include="..\Vanguard.DataAccess\Vanguard.DataAccess.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="appsettings.yml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="Views\Settings\ConnectionSettingPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

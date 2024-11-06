@@ -6,13 +6,14 @@ public sealed partial class ConnectionSettingPage : Page
     public ConnectionSettingViewModel ViewModel { get; set; }
     public string BreadCrumbBarItemText { get; set; }
 
-
     private readonly YamlConfigService _yamlConfigService;
 
     public ConnectionSettingPage()
     {
         ViewModel = App.GetService<ConnectionSettingViewModel>();
         _yamlConfigService = App.GetService<YamlConfigService>();
+
+        //ViewModel.AppSettings = _yamlConfigService.Settings;
 
         this.InitializeComponent();
     }
