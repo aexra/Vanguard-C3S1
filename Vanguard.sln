@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vanguard.Web", "Vanguard.We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vanguard.DataAccess", "Vanguard.DataAccess\Vanguard.DataAccess.csproj", "{F7D8EDB7-2828-4DEF-AEEC-2723C7F3BC19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vanguard.App", "Vanguard.App\Vanguard.App.csproj", "{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,30 @@ Global
 		{F7D8EDB7-2828-4DEF-AEEC-2723C7F3BC19}.Release|x64.Build.0 = Release|Any CPU
 		{F7D8EDB7-2828-4DEF-AEEC-2723C7F3BC19}.Release|x86.ActiveCfg = Release|Any CPU
 		{F7D8EDB7-2828-4DEF-AEEC-2723C7F3BC19}.Release|x86.Build.0 = Release|Any CPU
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Debug|Any CPU.Build.0 = Debug|x64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Debug|Any CPU.Deploy.0 = Debug|x64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Debug|ARM64.Build.0 = Debug|ARM64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Debug|x64.ActiveCfg = Debug|x64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Debug|x64.Build.0 = Debug|x64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Debug|x64.Deploy.0 = Debug|x64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Debug|x86.ActiveCfg = Debug|x86
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Debug|x86.Build.0 = Debug|x86
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Debug|x86.Deploy.0 = Debug|x86
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Release|Any CPU.ActiveCfg = Release|x64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Release|Any CPU.Build.0 = Release|x64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Release|Any CPU.Deploy.0 = Release|x64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Release|ARM64.ActiveCfg = Release|ARM64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Release|ARM64.Build.0 = Release|ARM64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Release|ARM64.Deploy.0 = Release|ARM64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Release|x64.ActiveCfg = Release|x64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Release|x64.Build.0 = Release|x64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Release|x64.Deploy.0 = Release|x64
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Release|x86.ActiveCfg = Release|x86
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Release|x86.Build.0 = Release|x86
+		{5B414A24-9E3E-482C-A9B8-00D44ABF94B7}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

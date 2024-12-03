@@ -28,7 +28,8 @@
                         <FontIcon Glyph="&#xF6FA;" />
                     </wuc:SettingsCard.HeaderIcon>
 
-                    <TextBox/>
+                    <TextBox
+                        Text="{x:Bind ViewModel.AppSettings.DatabaseHostIP, Mode=TwoWay}"/>
 
                 </wuc:SettingsCard>
 

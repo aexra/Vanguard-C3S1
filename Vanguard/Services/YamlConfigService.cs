@@ -2,15 +2,28 @@
 
 using YamlDotNet.Serialization;
 
-public class AppSettings
+public partial class AppSettings : ObservableObject
 {
-    public string AdministratorKey { get; set; }
-    public string YandexMapsApiKey { get; set; }
-    public string DatabaseHostIP { get; set; }
-    public string DatabaseHostPort { get; set; }
-    public string DatabaseName { get; set; }
-    public string DatabaseUsername { get; set; }
-    public string DatabasePassword { get; set; }
+    [ObservableProperty]
+    public string administratorKey;
+
+    [ObservableProperty]
+    public string yandexMapsApiKey;
+
+    [ObservableProperty]
+    public string databaseHostIP;
+
+    [ObservableProperty]
+    public string databaseHostPort;
+
+    [ObservableProperty]
+    public string databaseName;
+
+    [ObservableProperty]
+    public string databaseUsername;
+
+    [ObservableProperty]
+    public string databasePassword;
 }
 
 public class YamlConfigService
@@ -25,6 +38,7 @@ public class YamlConfigService
         {
             var yaml = await reader.ReadToEndAsync();
             var deserializer = new DeserializerBuilder().Build();
+            System.Diagnostics.Debug.WriteLine("appsettings.yml: " + yaml);
             return deserializer.Deserialize<AppSettings>(yaml);
         }
     }
@@ -33,6 +47,7 @@ public class YamlConfigService
     {
         var serializer = new SerializerBuilder().JsonCompatible().Build();
         var yaml = serializer.Serialize(settings);
+        System.Diagnostics.Debug.WriteLine("appsettings.yml: " + yaml);
         await File.WriteAllTextAsync(_filePath, yaml);
     }
 }

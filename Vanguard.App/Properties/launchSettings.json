@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Vanguard.App (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Vanguard.App (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -13,9 +13,15 @@ public sealed partial class ConnectionSettingPage : Page
         ViewModel = App.GetService<ConnectionSettingViewModel>();
         _yamlConfigService = App.GetService<YamlConfigService>();
 
-        //ViewModel.AppSettings = _yamlConfigService.Settings;
+        ViewModel.AppSettings = Task.Run(async () => await _yamlConfigService.LoadSettingsAsync()).Result;
+        ViewModel.AppSettings.PropertyChanged += AppSettings_PropertyChanged;
 
         this.InitializeComponent();
+    }
+
+    private async void AppSettings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        await _yamlConfigService.SaveSettingsAsync(this.ViewModel.AppSettings);
     }
 
     protected override void OnNavigatedTo(NavigationEventArgs e)

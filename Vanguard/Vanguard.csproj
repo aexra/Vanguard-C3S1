@@ -1,45 +1,41 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-	<OutputType>WinExe</OutputType>
-	<TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
-	<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-	<RootNamespace>Vanguard</RootNamespace>
-	<ApplicationManifest>app.manifest</ApplicationManifest>
-	<Platforms>x64;x86;ARM64</Platforms>
-	<RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &gt;= 8">win-x86;win-x64;win-arm64</RuntimeIdentifiers>
-	<RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &lt; 8">win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
-	<PublishProfile>win-$(Platform).pubxml</PublishProfile>
-	<UseWinUI>true</UseWinUI>
-	<EnableMsixTooling>true</EnableMsixTooling>
-	<Version>1.0.0</Version>
-	<ImplicitUsings>true</ImplicitUsings>
-	<LangVersion>Latest</LangVersion>
-	<ApplicationIcon>Assets\icon.ico</ApplicationIcon>
-	<IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
-	<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
-	<WindowsPackageType>None</WindowsPackageType>
-<PublishSingleFile>true</PublishSingleFile>
-<SelfContained>true</SelfContained>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>Vanguard</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>x64;x86;ARM64</Platforms>
+    <RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &gt;= 8">win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+    <RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &lt; 8">win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <PublishProfile>win-$(Platform).pubxml</PublishProfile>
+    <UseWinUI>true</UseWinUI>
+    <EnableMsixTooling>true</EnableMsixTooling>
+    <Version>1.0.0</Version>
+    <ImplicitUsings>true</ImplicitUsings>
+    <LangVersion>Latest</LangVersion>
+    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <WindowsPackageType>None</WindowsPackageType>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
   </PropertyGroup>
-
   <ItemGroup>
-	<None Include="Assets\**\*">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	</None>
+    <None Include="Assets\**\*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
-
   <ItemGroup>
     <None Remove="Views\Settings\ConnectionSettingPage.xaml" />
   </ItemGroup>
-
   <ItemGroup>
-	<Folder Include="Models\" />
+    <Folder Include="Models\" />
   </ItemGroup>
-
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
-
   <!-- 
     Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
     Tools extension to be activated for this project even if the Windows App SDK Nuget
@@ -72,13 +68,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-
   <!-- 
     Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
     Explorer "Package and Publish" context menu entry to be enabled for this project even if 
     the Windows App SDK Nuget package has not yet been restored.
   -->
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-	<HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+    <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
   </PropertyGroup>
 </Project>
