@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Vanguard.Desktop (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Vanguard.Desktop (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
