@@ -25,7 +25,7 @@ public class YamlConfigService
         {
             var yaml = await reader.ReadToEndAsync();
             var deserializer = new DeserializerBuilder().Build();
-            System.Diagnostics.Debug.WriteLine("appsettings.yml: " + yaml);
+            //System.Diagnostics.Debug.WriteLine("appsettings.yml: " + yaml);
             return deserializer.Deserialize<AppSettings>(yaml);
         }
     }

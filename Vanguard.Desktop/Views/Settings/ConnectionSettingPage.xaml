@@ -9,8 +9,8 @@
     mc:Ignorable="d"
     xmlns:views="using:Vanguard.Desktop.Views"
     xmlns:dev="using:DevWinUI"
-    dev:BreadcrumbNavigator.IsHeaderVisible="True"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    xmlns:extensions="using:CommunityToolkit.WinUI"
+    dev:BreadcrumbNavigator.IsHeaderVisible="True">
 
     <Grid>
         <ScrollView Margin="{ThemeResource ContentPageMargin}" VerticalScrollBarVisibility="Auto">
@@ -20,15 +20,83 @@
                 Spacing="5">
 
                 <dev:SettingsCard
-                        Header="Server IP"
-                        Description="Set web server IP">
+                    Header="Server IP"
+                    Description="Set web server IP">
                     
                     <dev:SettingsCard.HeaderIcon>
                         <FontIcon Glyph="&#xF6FA;" />
                     </dev:SettingsCard.HeaderIcon>
 
                     <TextBox
-                        Text="{x:Bind ViewModel.DatabaseHostIP, Mode=TwoWay}"/>
+                        Text="{x:Bind ViewModel.DatabaseHostIP, Mode=TwoWay}"
+                        Width="200"
+                        PlaceholderText=""/>
+
+                </dev:SettingsCard>
+
+                <dev:SettingsCard
+                    Header="Server port"
+                    Description="Set web server port"
+                    HeaderIcon="{dev:BitmapIcon Source=Assets/Fluent/Port.png}">
+
+                    <TextBox
+                        Text="{x:Bind ViewModel.DatabaseHostPort, Mode=TwoWay}"
+                        Width="200"
+                        PlaceholderText=""/>
+
+                </dev:SettingsCard>
+
+                <dev:SettingsCard
+                    Header="Database name"
+                    Description="Set server database name"
+                    HeaderIcon="{dev:BitmapIcon Source=Assets/Fluent/DB.png}">
+
+                    <TextBox
+                        Text="{x:Bind ViewModel.DatabaseName, Mode=TwoWay}"
+                        Width="200"
+                        PlaceholderText=""/>
+
+                </dev:SettingsCard>
+
+                <dev:SettingsCard
+                    Header="Database username"
+                    Description="Set server database username">
+
+                    <dev:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xE77B;" />
+                    </dev:SettingsCard.HeaderIcon>
+
+                    <TextBox
+                        Text="{x:Bind ViewModel.DatabaseUsername, Mode=TwoWay}"
+                        Width="200"
+                        PlaceholderText=""/>
+
+                </dev:SettingsCard>
+
+                <dev:SettingsCard
+                    Header="Database password"
+                    Description="Set server database password"
+                    HeaderIcon="{dev:BitmapIcon Source=Assets/Fluent/Password.png}">
+
+                    <TextBox
+                        Text="{x:Bind ViewModel.DatabasePassword, Mode=TwoWay}"
+                        Width="200"
+                        PlaceholderText=""/>
+
+                </dev:SettingsCard>
+
+                <dev:SettingsCard
+                    Header="Yandex.Maps API Key"
+                    Description="Set Yandex.Maps API Key to access maps while creating contracts">
+
+                    <dev:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xE8D7;" />
+                    </dev:SettingsCard.HeaderIcon>
+
+                    <TextBox
+                        Text="{x:Bind ViewModel.YandexMapsApiKey, Mode=TwoWay}"
+                        Width="200"
+                        PlaceholderText=""/>
 
                 </dev:SettingsCard>
 
