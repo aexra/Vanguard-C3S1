@@ -1,29 +1,16 @@
-﻿namespace Vanguard.Services;
+﻿namespace Vanguard.Desktop.Services;
 
 using YamlDotNet.Serialization;
 
-public partial class AppSettings : ObservableObject
+public partial class AppSettings
 {
-    [ObservableProperty]
-    public string administratorKey;
-
-    [ObservableProperty]
-    public string yandexMapsApiKey;
-
-    [ObservableProperty]
-    public string databaseHostIP;
-
-    [ObservableProperty]
-    public string databaseHostPort;
-
-    [ObservableProperty]
-    public string databaseName;
-
-    [ObservableProperty]
-    public string databaseUsername;
-
-    [ObservableProperty]
-    public string databasePassword;
+    public string AdministratorKey { get; set; }
+    public string YandexMapsApiKey { get; set; }
+    public string DatabaseHostIP { get; set; }
+    public string DatabaseHostPort { get; set; }
+    public string DatabaseName { get; set; }
+    public string DatabaseUsername { get; set; }
+    public string DatabasePassword { get; set; }
 }
 
 public class YamlConfigService
