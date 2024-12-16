@@ -71,6 +71,7 @@
     <None Remove="Views\Reports\Report3Page.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Helpers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
