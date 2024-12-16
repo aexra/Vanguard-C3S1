@@ -18,22 +18,14 @@
                     Spacing="5">
             <dev:SettingsCard Description="Change your app Settings"
                               Header="General"
-                              HeaderIcon="{dev:BitmapIcon Source=Assets/Fluent/Settings.png}"
+                              HeaderIcon="{dev:BitmapIcon Source=Assets/Fluent/General.png}"
                               IsClickEnabled="True"
                               dev:NavigationHelperEx.NavigateToSetting="views:GeneralSettingPage" />
-            <dev:SettingsCard Description="Explore the different ways to customize the appearance and behavior of your app. You can change the material, theme, accent, and more options to suit your style and preference"
+            <dev:SettingsCard Description="Explore the different ways to customize the appearance and behavior of your app. You can change the material, theme, accent, and more options to suit your style and preference."
                               Header="Appearance &amp; behavior"
                               HeaderIcon="{dev:BitmapIcon Source=Assets/Fluent/Theme.png}"
                               IsClickEnabled="True"
                               dev:NavigationHelperEx.NavigateToSetting="views:ThemeSettingPage" />
-            <dev:SettingsCard Description="Configure connection to server"
-                              Header="Connection"
-                              IsClickEnabled="True"
-                              dev:NavigationHelperEx.NavigateToSetting="views:ConnectionSettingPage">
-                <dev:SettingsCard.HeaderIcon>
-                    <FontIcon Glyph="&#xE703;"/>
-                </dev:SettingsCard.HeaderIcon>
-            </dev:SettingsCard>
             <dev:SettingsCard Description="Check for Updates"
                               Header="Update App"
                               HeaderIcon="{dev:BitmapIcon Source=Assets/Fluent/Update.png}"

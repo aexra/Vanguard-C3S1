@@ -1,6 +1,4 @@
-﻿using Vanguard.Desktop.Services;
-
-namespace Vanguard.Desktop;
+﻿namespace Vanguard.Desktop;
 
 public partial class App : Application
 {
@@ -31,11 +29,9 @@ public partial class App : Application
         var services = new ServiceCollection();
         services.AddSingleton<IThemeService, ThemeService>();
         services.AddSingleton<IJsonNavigationService, JsonNavigationService>();
-        services.AddSingleton<YamlConfigService>();
 
         services.AddTransient<MainViewModel>();
         services.AddTransient<GeneralSettingViewModel>();
-        services.AddTransient<ConnectionSettingViewModel>();
         services.AddTransient<AppUpdateSettingViewModel>();
         services.AddTransient<AboutUsSettingViewModel>();
 
@@ -53,7 +49,8 @@ public partial class App : Application
 
         if (GetThemeService != null)
         {
-            GetThemeService.AutoInitialize(MainWindow);
+            GetThemeService.AutoInitialize(MainWindow)
+                .ConfigureTintColor();
         }
 
         rootFrame.Navigate(typeof(MainPage));

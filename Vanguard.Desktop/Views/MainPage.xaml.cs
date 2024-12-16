@@ -17,7 +17,7 @@ public sealed partial class MainPage : Page
                 .ConfigureJsonFile("Assets/NavViewMenu/AppData.json")
                 .ConfigureDefaultPage(typeof(HomeLandingPage))
                 .ConfigureSettingsPage(typeof(SettingsPage))
-                //.ConfigureTitleBar(AppTitleBar)
+                .ConfigureTitleBar(AppTitleBar)
                 .ConfigureBreadcrumbBar(BreadCrumbNav, BreadcrumbPageMappings.PageDictionary);
         }
     }

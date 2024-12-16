@@ -8,11 +8,11 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="51f7146b-5dc3-4b1d-97ae-99c48cf891c9"
+    Name="cc494f9b-164e-4d88-9538-d67acf7cadea"
     Publisher="CN=aexra"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="51f7146b-5dc3-4b1d-97ae-99c48cf891c9" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="cc494f9b-164e-4d88-9538-d67acf7cadea" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Vanguard.Desktop</DisplayName>
