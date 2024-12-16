@@ -1,0 +1,3 @@
+[submodule "IdentityBaseModel"]
+	path = IdentityBaseModel
+	url = https://github.com/aexra/IdentityBaseModel.git
