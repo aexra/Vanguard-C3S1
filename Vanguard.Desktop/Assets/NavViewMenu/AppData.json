@@ -17,6 +17,32 @@
           "HideItem": true
         }
       ]
+    },
+    {
+      "UniqueId": "Отчеты",
+      "Title": "Отчеты",
+      "IconGlyph": "\uF571",
+      "IsSpecialSection": false,
+      "Items": [
+        {
+          "UniqueId": "Vanguard.Desktop.Views.Reports.Report1Page",
+          "Title": "Отчет 1",
+          "Subtitle": "Vanguard.Desktop",
+          "IconGlyph": "\uE729"
+        },
+        {
+          "UniqueId": "Vanguard.Desktop.Views.Reports.Report2Page",
+          "Title": "Отчет 2",
+          "Subtitle": "Vanguard.Desktop",
+          "IconGlyph": "\uE729"
+        },
+        {
+          "UniqueId": "Vanguard.Desktop.Views.Reports.Report3Page",
+          "Title": "Отчет 3",
+          "Subtitle": "Vanguard.Desktop",
+          "IconGlyph": "\uE729"
+        }
+      ]
     }
   ]
 }

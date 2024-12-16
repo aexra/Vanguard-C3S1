@@ -45,6 +45,15 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BreadcrumbPageMappings.cs</LastGenOutput>
     </None>
+    <Page Update="Views\Reports\Report3Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\Reports\Report2Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\Reports\Report1Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Update="T4Templates\BreadcrumbPageMappings.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -55,6 +64,11 @@
     <None Include="Assets\**\*">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Reports\Report1Page.xaml" />
+    <None Remove="Views\Reports\Report2Page.xaml" />
+    <None Remove="Views\Reports\Report3Page.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -71,6 +85,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Labs.WinUI.Controls.DataTable" Version="0.1.241129-build.1830" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="DevWinUI" Version="8.0.0-Preview3" />
     <PackageReference Include="DevWinUI.Controls" Version="8.0.0-Preview3" />

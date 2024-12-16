@@ -16,5 +16,8 @@ public partial class NavigationPageMappings
     public static Dictionary<string, Type> PageDictionary { get; } = new Dictionary<string, Type>
     {
         {"Vanguard.Desktop.Views.HomeLandingPage", typeof(Vanguard.Desktop.Views.HomeLandingPage)},
+        {"Vanguard.Desktop.Views.Reports.Report1Page", typeof(Vanguard.Desktop.Views.Reports.Report1Page)},
+        {"Vanguard.Desktop.Views.Reports.Report2Page", typeof(Vanguard.Desktop.Views.Reports.Report2Page)},
+        {"Vanguard.Desktop.Views.Reports.Report3Page", typeof(Vanguard.Desktop.Views.Reports.Report3Page)},
     };
 }
