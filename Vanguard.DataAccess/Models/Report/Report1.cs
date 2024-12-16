@@ -1,4 +1,4 @@
-﻿namespace Vanguard.DataAccess.DTOs;
+﻿namespace Vanguard.DataAccess.Models;
 public class Report1
 {
     public string Name { get; set; }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Page
     x:Class="Vanguard.Desktop.Views.Reports.Report3Page"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -7,9 +7,30 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls">
 
-    <Grid>
+    <Grid Margin="20"
+          RowSpacing="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+        Spacing="10"
+        Orientation="Horizontal">
+            <Button x:Name="SearchButton"
+        Content="Рассчитать"
+        Click="SearchButton_Click"/>
+        </StackPanel>
+
+        <controls:DataGrid x:Name="DG1"
+               Grid.Row="1"
+               AutoGenerateColumns="True"
+               ItemsSource="{x:Bind ViewModel.Reports, Mode=OneWay}"
+               GridLinesVisibility="All"
+               AlternatingRowBackground="#202020"/>
 
     </Grid>
 </Page>

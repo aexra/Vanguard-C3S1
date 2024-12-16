@@ -1,4 +1,4 @@
-﻿namespace Vanguard.DataAccess.DTOs;
+﻿namespace Vanguard.DataAccess.Models;
 public class Report3
 {
     public int CrewId { get; set; }

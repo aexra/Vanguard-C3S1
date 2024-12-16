@@ -1,4 +1,6 @@
-﻿namespace Vanguard.Desktop;
+﻿using Vanguard.Desktop.ViewModels.Reports;
+
+namespace Vanguard.Desktop;
 
 public partial class App : Application
 {
@@ -34,6 +36,10 @@ public partial class App : Application
         services.AddTransient<GeneralSettingViewModel>();
         services.AddTransient<AppUpdateSettingViewModel>();
         services.AddTransient<AboutUsSettingViewModel>();
+
+        services.AddTransient<Report1PageViewModel>();
+        services.AddTransient<Report2PageViewModel>();
+        services.AddTransient<Report3PageViewModel>();
 
         return services.BuildServiceProvider();
     }
