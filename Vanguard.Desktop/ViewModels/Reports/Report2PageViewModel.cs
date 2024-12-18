@@ -8,7 +8,7 @@ public partial class Report2PageViewModel : ObservableObject
 {
     public ObservableCollection<Report2> Reports { get; set; } = new();
 
-    public async Task Load()
+    public async Task LoadAsync()
     {
         Reports.Clear();
 

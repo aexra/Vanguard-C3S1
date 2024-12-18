@@ -8,7 +8,7 @@ public partial class AllContractsPageViewModel : ObservableObject
 {
     public ObservableCollection<Contract> Contracts { get; set; } = new();
 
-    public async Task Load()
+    public async Task LoadAsync()
     {
         Contracts.Clear();
 
@@ -26,5 +26,10 @@ public partial class AllContractsPageViewModel : ObservableObject
                 }
             }
         }
+    }
+
+    public async Task DeleteAsync(Contract c)
+    {
+
     }
 }

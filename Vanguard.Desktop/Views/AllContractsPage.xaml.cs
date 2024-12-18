@@ -10,12 +10,12 @@ public sealed partial class AllContractsPage : Page
         ViewModel = App.GetService<AllContractsPageViewModel>();
         this.InitializeComponent();
 
-        DispatcherQueue.TryEnqueue(async () => await ViewModel.Load());
+        DispatcherQueue.TryEnqueue(async () => await ViewModel.LoadAsync());
     }
 
     private async void UpdateContractsListBtn_Click(object sender, RoutedEventArgs e)
     {
-        await ViewModel.Load();
+        await ViewModel.LoadAsync();
     }
 
     private void CreateContractBtn_Click(object sender, RoutedEventArgs e)

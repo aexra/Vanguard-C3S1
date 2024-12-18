@@ -11,6 +11,6 @@ public sealed partial class MyContractsPage : Page
 
     private async void UpdateContractsListBtn_Click(object sender, RoutedEventArgs e)
     {
-        await ViewModel.Load();
+        await ViewModel.LoadAsync();
     }
 }

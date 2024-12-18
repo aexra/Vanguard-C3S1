@@ -14,7 +14,7 @@ public partial class MyContractsPageViewModel : ObservableObject
     [ObservableProperty]
     private bool _isLegalEntity;
 
-    public async Task Load()
+    public async Task LoadAsync()
     {
         Contracts.Clear();
 

@@ -13,6 +13,6 @@ public sealed partial class Report1Page : Page
 
     private void SearchButton_Click(object sender, RoutedEventArgs e)
     {
-        DispatcherQueue.TryEnqueue(async () => await ViewModel.Load());
+        DispatcherQueue.TryEnqueue(async () => await ViewModel.LoadAsync());
     }
 }
