@@ -20,4 +20,30 @@ public class ApiHelper
 
         return await _sharedClient.SendAsync(request);
     }
+    public static async Task<HttpResponseMessage?> GetContracts(int? id = null, bool isLegalEntity = false)
+    {
+        using var request = new HttpRequestMessage();
+        request.Method = HttpMethod.Get;
+
+        if (id == null)
+        {
+            // Возвращаем все контракты
+            request.RequestUri = new Uri($"{_baseAddress}/contracts");
+        }
+        else
+        {
+            if (isLegalEntity)
+            {
+                // Возвращаем все контракты по идентификатору организации
+                request.RequestUri = new Uri($"{_baseAddress}/contracts/organization={id}");
+            }
+            else
+            {
+                // Возвращаем все контракты по идентификатору заказчика
+                request.RequestUri = new Uri($"{_baseAddress}/contracts/user={id}");
+            }
+        }
+
+        return await _sharedClient.SendAsync(request);
+    }
 }

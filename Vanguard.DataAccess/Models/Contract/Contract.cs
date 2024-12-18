@@ -2,8 +2,8 @@
 public class Contract
 {
     public int ContractId { get; set; }
-    public int OrganizationId { get; set; }
-    public int OwnerId { get; set; }
+    public int? OrganizationId { get; set; }
+    public int? OwnerId { get; set; }
 
     public bool IsLegalEntity { get; set; }
     public DateTime SignDate { get; set; }

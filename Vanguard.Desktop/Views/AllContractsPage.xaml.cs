@@ -7,5 +7,12 @@ public sealed partial class AllContractsPage : Page
     {
         ViewModel = App.GetService<AllContractsPageViewModel>();
         this.InitializeComponent();
+
+        DispatcherQueue.TryEnqueue(async () => await ViewModel.Load());
+    }
+
+    private async void UpdateContractsListBtn_Click(object sender, RoutedEventArgs e)
+    {
+        await ViewModel.Load();
     }
 }
