@@ -41,6 +41,10 @@ public partial class App : Application
         services.AddTransient<Report2PageViewModel>();
         services.AddTransient<Report3PageViewModel>();
 
+        services.AddTransient<AllContractsPageViewModel>();
+        services.AddTransient<MyContractsPageViewModel>();
+        services.AddTransient<MyCrewCallsPageViewModel>();
+
         return services.BuildServiceProvider();
     }
 

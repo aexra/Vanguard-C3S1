@@ -19,5 +19,8 @@ public partial class NavigationPageMappings
         {"Vanguard.Desktop.Views.Reports.Report1Page", typeof(Vanguard.Desktop.Views.Reports.Report1Page)},
         {"Vanguard.Desktop.Views.Reports.Report2Page", typeof(Vanguard.Desktop.Views.Reports.Report2Page)},
         {"Vanguard.Desktop.Views.Reports.Report3Page", typeof(Vanguard.Desktop.Views.Reports.Report3Page)},
+        {"Vanguard.Desktop.Views.AllContractsPage", typeof(Vanguard.Desktop.Views.AllContractsPage)},
+        {"Vanguard.Desktop.Views.MyContractsPage", typeof(Vanguard.Desktop.Views.MyContractsPage)},
+        {"Vanguard.Desktop.Views.MyCrewCallsPage", typeof(Vanguard.Desktop.Views.MyCrewCallsPage)},
     };
 }

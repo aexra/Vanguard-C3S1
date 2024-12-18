@@ -2,8 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/Ghost1372/DevWinUI/refs/heads/main/AppData.Schema.json",
   "Groups": [
     {
-      "UniqueId": "Vanguard.Desktop",
-      "Title": "Vanguard.Desktop",
+      "UniqueId": "Главная",
+      "Title": "Главная",
       "ImagePath": "ms-appx:///Assets/AppIcon.png",
       "IsSpecialSection": false,
       "ShowItemsWithoutGroup": true,
@@ -11,7 +11,7 @@
       "Items": [
         {
           "UniqueId": "Vanguard.Desktop.Views.HomeLandingPage",
-          "Title": "Vanguard.Desktop",
+          "Title": "Главная",
           "Subtitle": "Vanguard.Desktop",
           "ImagePath": "ms-appx:///Assets/AppIcon.png",
           "HideItem": true
@@ -27,20 +27,62 @@
         {
           "UniqueId": "Vanguard.Desktop.Views.Reports.Report1Page",
           "Title": "Отчет 1",
-          "Subtitle": "Vanguard.Desktop",
+          "Subtitle": "",
           "IconGlyph": "\uE729"
         },
         {
           "UniqueId": "Vanguard.Desktop.Views.Reports.Report2Page",
           "Title": "Отчет 2",
-          "Subtitle": "Vanguard.Desktop",
+          "Subtitle": "",
           "IconGlyph": "\uE729"
         },
         {
           "UniqueId": "Vanguard.Desktop.Views.Reports.Report3Page",
           "Title": "Отчет 3",
-          "Subtitle": "Vanguard.Desktop",
+          "Subtitle": "",
           "IconGlyph": "\uE729"
+        }
+      ]
+    },
+    {
+      "UniqueId": "ModeratorGroup",
+      "Title": "ModeratorGroup",
+      "IconGlyph": "\uE7EF",
+      "ShowItemsWithoutGroup": true,
+      "Items": [
+        {
+          "UniqueId": "Vanguard.Desktop.Views.AllContractsPage",
+          "Title": "Все контракты",
+          "Subtitle": "",
+          "IconGlyph": "\uE7EF"
+        }
+      ]
+    },
+    {
+      "UniqueId": "UserGroup",
+      "Title": "UserGroup",
+      "IconGlyph": "\uE9F9",
+      "ShowItemsWithoutGroup": true,
+      "Items": [
+        {
+          "UniqueId": "Vanguard.Desktop.Views.MyContractsPage",
+          "Title": "Мои контракты",
+          "Subtitle": "",
+          "IconGlyph": "\uE9F9"
+        }
+      ]
+    },
+    {
+      "UniqueId": "CrewMemberGroup",
+      "Title": "CrewMemberGroup",
+      "IconGlyph": "\uE80B",
+      "ShowItemsWithoutGroup": true,
+      "Items": [
+        {
+          "UniqueId": "Vanguard.Desktop.Views.MyCrewCallsPage",
+          "Title": "Рабочие бригады",
+          "Subtitle": "",
+          "IconGlyph": "\uE80B"
         }
       ]
     }

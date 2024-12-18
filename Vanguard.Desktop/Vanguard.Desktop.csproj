@@ -45,6 +45,15 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BreadcrumbPageMappings.cs</LastGenOutput>
     </None>
+    <Page Update="Views\MyCrewCallsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\AllContractsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\MyContractsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Update="Views\Reports\Report3Page.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -66,6 +75,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Views\AllContractsPage.xaml" />
+    <None Remove="Views\MyContractsPage.xaml" />
+    <None Remove="Views\MyCrewCallsPage.xaml" />
     <None Remove="Views\Reports\Report1Page.xaml" />
     <None Remove="Views\Reports\Report2Page.xaml" />
     <None Remove="Views\Reports\Report3Page.xaml" />
