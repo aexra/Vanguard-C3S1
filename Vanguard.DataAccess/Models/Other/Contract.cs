@@ -1,4 +1,6 @@
-﻿namespace Vanguard.DataAccess.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Vanguard.DataAccess.Models;
 public partial class Contract
 {
     public int ContractId { get; set; }

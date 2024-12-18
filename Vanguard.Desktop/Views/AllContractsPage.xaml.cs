@@ -32,7 +32,17 @@ public sealed partial class AllContractsPage : Page
         dialog.CloseButtonText = "Отмена";
         dialog.DefaultButton = ContentDialogButton.Primary;
 
-        await dialog.ShowAsync();
+        var result = await dialog.ShowAsync();
+
+        if (result == ContentDialogResult.Primary)
+        {
+            var c = content.ViewModel.ToContract();
+
+            if (c != null)
+            {
+                await ViewModel.CreateAsync(c);
+            }
+        }
     }
 
     private async void DeleteContractMFI_Click(object sender, RoutedEventArgs e)
@@ -45,13 +55,37 @@ public sealed partial class AllContractsPage : Page
         }
     }
 
-    private void EditContractMFI_Click(object sender, RoutedEventArgs e)
+    private async void EditContractMFI_Click(object sender, RoutedEventArgs e)
     {
         var menuFlyoutItem = sender as MenuFlyoutItem;
 
         if (menuFlyoutItem?.DataContext is Contract c)
         {
+            var dialog = new ContentDialog();
+            var content = new ContractFormContent();
 
+            content.ViewModel.ContentTitle = "Редактировать контракт";
+
+            content.ViewModel.FromContract(c);
+
+            dialog.Content = content;
+            dialog.XamlRoot = this.XamlRoot;
+            dialog.PrimaryButtonText = "Применить";
+            dialog.CloseButtonText = "Отмена";
+            dialog.DefaultButton = ContentDialogButton.Primary;
+
+            var result = await dialog.ShowAsync();
+
+            if (result == ContentDialogResult.Primary)
+            {
+                var updatedContract = content.ViewModel.ToContract();
+
+                if (updatedContract != null)
+                {
+                    updatedContract.ContractId = c.ContractId;
+                    await ViewModel.UpdateAsync(updatedContract);
+                }
+            }
         }
     }
 }

@@ -25,12 +25,12 @@ public class ApiHelper
         return await _sharedClient.SendAsync(request);
     }
 
-    public static async Task<HttpResponseMessage?> CreateContracts(params List<Contract> contracts)
+    public static async Task<HttpResponseMessage?> CreateContract(Contract contract)
     {
         using var request = new HttpRequestMessage();
         request.RequestUri = new Uri($"{_baseAddress}/contracts");
         request.Method = HttpMethod.Post;
-        request.Content = JsonContent.Create(contracts);
+        request.Content = JsonContent.Create(contract);
 
         return await _sharedClient.SendAsync(request);
     }

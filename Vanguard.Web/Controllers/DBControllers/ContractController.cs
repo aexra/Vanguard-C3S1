@@ -51,7 +51,7 @@ public class ContractController : ControllerBase
     [HttpPut]
     public async Task<IActionResult> UpdateContract([FromBody] Contract contract)
     {
-        var result = await _context.Database.SqlQueryRaw<Contract>(@$"
+        var result = await _context.Database.SqlQuery<string>(@$"
             UPDATE Contracts
             SET OrganizationId = {contract.OrganizationId},
                 OwnerId = {contract.OwnerId},
@@ -69,18 +69,12 @@ public class ContractController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateContracts([FromBody] List<Contract> contracts)
+    public async Task<IActionResult> CreateContract([FromBody] Contract c)
     {
-        var sql = "INSERT INTO Contracts (OrganizationId, OwnerId, IsLegalEntity, SignDate, Address, Price, Comment) VALUES ";
-
-        foreach (var c in contracts)
-        {
-            sql += '\n' + $"({c.OrganizationId},{c.OwnerId},{c.IsLegalEntity},{c.SignDate},{c.Address},{c.Price},{c.Comment}),";
-        }
-
-        sql = sql[..^1];
-
-        var result = _context.Database.SqlQueryRaw<string>(@$"{sql}");
+        var result = _context.Database.SqlQuery<string>(@$"
+            INSERT INTO Contracts (OrganizationId, OwnerId, IsLegalEntity, SignDate, Address, Price, Comment) VALUES
+            ({c.OrganizationId},{c.OwnerId},{c.IsLegalEntity},{c.SignDate},{c.Address},{c.Price},{c.Comment})                            
+        ");
 
         return Ok(result);
     }
@@ -93,7 +87,7 @@ public class ContractController : ControllerBase
             WHERE ContractId IN({ string.Join(", ", ids)})
         ";
 
-        var result = _context.Database.SqlQueryRaw<string>(@$"{sql}");
+        var result = _context.Database.SqlQuery<string>(@$"{sql}");
 
         return Ok(result);
     }

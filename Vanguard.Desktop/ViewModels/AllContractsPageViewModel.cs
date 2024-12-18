@@ -40,11 +40,21 @@ public partial class AllContractsPageViewModel : ObservableObject
 
     public async Task CreateAsync(Contract c)
     {
+        var response = await ApiHelper.CreateContract(c);
 
+        if (response != null && response.IsSuccessStatusCode)
+        {
+            Contracts.Add(c);
+        }
     }
 
-    public async Task EditAsync(Contract c)
+    public async Task UpdateAsync(Contract c)
     {
+        var response = await ApiHelper.UpdateContract(c);
 
+        if (response != null && response.IsSuccessStatusCode)
+        {
+            await LoadAsync();
+        }
     }
 }
