@@ -19,7 +19,7 @@ public class CrewController : ControllerBase
     [HttpGet("{crewid}/calls")]
     public async Task<IActionResult> GetCrewCalls([FromRoute] string crewid)
     {
-        var result = await _context.Database.SqlQuery<Contract>(@$"
+        var result = await _context.Database.SqlQuery<CrewCall>(@$"
             SELECT * FROM CrewCalls
             WHERE crewid = {crewid}
         ").ToListAsync();

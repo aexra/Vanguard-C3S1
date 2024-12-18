@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Vanguard.DataAccess.Models;
-using Vanguard.Web.Data.Models;
 
 namespace Vanguard.Web.Controllers;
 

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Vanguard.Web.Data.Models;
-
+namespace Vanguard.DataAccess.Models;
 public class User : IdentityUser
 {
+
 }

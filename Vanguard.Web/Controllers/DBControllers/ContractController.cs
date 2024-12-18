@@ -19,64 +19,80 @@ public class ContractController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetContracts()
     {
-        return Ok(await _context.Contracts.ToListAsync());
+        var result = await _context.Database.SqlQuery<Contract>(@$"
+            SELECT * FROM Contracts
+        ").ToListAsync();
+
+        return Ok(result);
     }
 
-    [HttpGet("user={ownerid}")]
-    public async Task<IActionResult> GetContractsByUser([FromRoute] string ownerid)
+    [HttpGet("user={id}")]
+    public async Task<IActionResult> GetContractsByUser([FromRoute] int id)
     {
-        return Ok(await _context.Contracts.Where(c => c.OwnerId == int.Parse(ownerid)).ToListAsync());
+        var result = await _context.Database.SqlQuery<Contract>(@$"
+            SELECT * FROM Contracts
+            WHERE OwnerId = {id}
+        ").ToListAsync();
+
+        return Ok(result);
     }
 
-    [HttpGet("organization={organizationid}")]
-    public async Task<IActionResult> GetContractsByOrganization([FromRoute] string organizationid)
+    [HttpGet("organization={id}")]
+    public async Task<IActionResult> GetContractsByOrganization([FromRoute] int id)
     {
-        return Ok(await _context.Contracts.Where(c => c.OrganizationId == int.Parse(organizationid)).ToListAsync());
+        var result = await _context.Database.SqlQuery<Contract>(@$"
+            SELECT * FROM Contracts
+            WHERE OrganizationId = {id}
+        ").ToListAsync();
+
+        return Ok(result);
     }
 
     [HttpPut]
     public async Task<IActionResult> UpdateContract([FromBody] Contract contract)
     {
-        var entity = await _context.Contracts.Where(c => c.ContractId == contract.ContractId).FirstOrDefaultAsync();
-
-        if (entity == null)
-        {
-            return NotFound();
-        }
-
-        entity.Comment = contract.Comment;
-        entity.ContractId = contract.ContractId;
-        entity.Address = contract.Address;
-        entity.OwnerId = contract.OwnerId;
-        entity.OrganizationId = contract.OrganizationId;
-        entity.IsLegalEntity = contract.IsLegalEntity;
-        entity.Price = contract.Price;
-        entity.SignDate = contract.SignDate;
+        var result = await _context.Database.SqlQuery<Contract>(@$"
+            UPDATE Contracts
+            SET OrganizationId = {contract.OrganizationId},
+                OwnerId = {contract.OwnerId},
+                IsLegalEntity = {contract.IsLegalEntity},
+                SignDate = {contract.SignDate},
+                Address = {contract.Address},
+                Price = {contract.Price},
+                Comment = {contract.Comment}
+            WHERE ContractId = {contract.ContractId}
+        ").ToListAsync();
 
         await _context.SaveChangesAsync();
 
-        return Ok(entity);
+        return Ok(result);
     }
 
     [HttpPost]
     public async Task<IActionResult> CreateContracts([FromBody] List<Contract> contracts)
     {
-        foreach (Contract contract in contracts)
+        var sql = "INSERT INTO Contracts (OrganizationId, OwnerId, IsLegalEntity, SignDate, Address, Price, Comment) VALUES ";
+
+        foreach (var c in contracts)
         {
-            await _context.Contracts.AddAsync(contract);
+            sql += '\n' + $"({c.OrganizationId},{c.OwnerId},{c.IsLegalEntity},{c.SignDate},{c.Address},{c.Price},{c.Comment}),";
         }
 
-        await _context.SaveChangesAsync();
+        sql = sql[..^1];
 
-        return Ok();
+        var result = _context.Database.SqlQuery<string>($@"{sql}");
+
+        return Ok(result);
     }
 
     [HttpDelete]
     public async Task<IActionResult> DeleteContracts([FromBody] int[] ids)
     {
-        _context.Contracts.RemoveRange(_context.Contracts.Where(c => ids.Contains(c.ContractId)));
-        await _context.SaveChangesAsync();
+        var result = _context.Database.SqlQuery<string>(@$"
+            DELETE FROM Contracts
+            WHERE ContractId = ANY('{{{string.Join(", ", ids)}}}')
+        ");
 
-        return Ok();
+        return Ok(result);
     }
 }

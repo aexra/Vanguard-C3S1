@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Vanguard.DataAccess.Models;
 using Vanguard.Web.Data.Contexts;
-using Vanguard.Web.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
