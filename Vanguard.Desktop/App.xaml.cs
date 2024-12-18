@@ -1,4 +1,5 @@
-﻿using Vanguard.Desktop.ViewModels.Reports;
+﻿using Vanguard.Desktop.ViewModels.Controls;
+using Vanguard.Desktop.ViewModels.Reports;
 
 namespace Vanguard.Desktop;
 
@@ -44,6 +45,8 @@ public partial class App : Application
         services.AddTransient<AllContractsPageViewModel>();
         services.AddTransient<MyContractsPageViewModel>();
         services.AddTransient<MyCrewCallsPageViewModel>();
+
+        services.AddTransient<ContractFormContentViewModel>();
 
         return services.BuildServiceProvider();
     }

@@ -37,4 +37,14 @@ public partial class AllContractsPageViewModel : ObservableObject
             Contracts.Remove(c);
         }
     }
+
+    public async Task CreateAsync(Contract c)
+    {
+
+    }
+
+    public async Task EditAsync(Contract c)
+    {
+
+    }
 }

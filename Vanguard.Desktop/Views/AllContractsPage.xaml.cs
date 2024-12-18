@@ -1,4 +1,5 @@
 ﻿using Vanguard.DataAccess.Models;
+using Vanguard.Desktop.Controls;
 
 namespace Vanguard.Desktop.Views;
 public sealed partial class AllContractsPage : Page
@@ -18,9 +19,20 @@ public sealed partial class AllContractsPage : Page
         await ViewModel.LoadAsync();
     }
 
-    private void CreateContractBtn_Click(object sender, RoutedEventArgs e)
+    private async void CreateContractBtn_Click(object sender, RoutedEventArgs e)
     {
+        var dialog = new ContentDialog();
+        var content = new ContractFormContent();
 
+        content.ViewModel.ContentTitle = "Новый контракт";
+
+        dialog.Content = content;
+        dialog.XamlRoot = this.XamlRoot;
+        dialog.PrimaryButtonText = "Создать";
+        dialog.CloseButtonText = "Отмена";
+        dialog.DefaultButton = ContentDialogButton.Primary;
+
+        await dialog.ShowAsync();
     }
 
     private async void DeleteContractMFI_Click(object sender, RoutedEventArgs e)

@@ -32,6 +32,9 @@
     <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
   </PropertyGroup>
   <ItemGroup>
+    <Page Update="Controls\ContractFormContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <None Update="T4Templates\NavigationPageMappings.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NavigationPageMappings.cs</LastGenOutput>
@@ -75,6 +78,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Controls\ContractFormContent.xaml" />
     <None Remove="Views\AllContractsPage.xaml" />
     <None Remove="Views\MyContractsPage.xaml" />
     <None Remove="Views\MyCrewCallsPage.xaml" />

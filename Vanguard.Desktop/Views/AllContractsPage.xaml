@@ -43,7 +43,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Horizontal" Spacing="10">
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE710;" FontSize="16"/>
-                        <TextBlock x:Uid="CreateContractButton"/>
+                        <TextBlock Text="Создать"/>
                     </StackPanel>
                 </Button.Content>
             </Button>
