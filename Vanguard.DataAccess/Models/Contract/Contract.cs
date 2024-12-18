@@ -1,6 +1,12 @@
-﻿namespace Vanguard.DataAccess.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Vanguard.DataAccess.Models;
+
+[Table("Contracts")]
 public class Contract
 {
+    [Key]
     public int ContractId { get; set; }
     public int? OrganizationId { get; set; }
     public int? OwnerId { get; set; }
