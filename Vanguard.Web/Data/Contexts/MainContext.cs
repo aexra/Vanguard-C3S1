@@ -1,12 +1,15 @@
 ﻿using IdentityBase.Data.Contexts;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Vanguard.DataAccess.Models;
 using Vanguard.Web.Data.Models;
 
 namespace Vanguard.Web.Data.Contexts;
 
 public class MainContext : IdentityContext<User>
 {
+    public DbSet<Contract> Contracts { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseNpgsql($"Host=localhost;Port=5432;Database=vanguard;Username=postgres;Password=1234;Include Error Detail=True");

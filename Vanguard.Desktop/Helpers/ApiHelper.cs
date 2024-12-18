@@ -15,6 +15,7 @@ public class ApiHelper
 
         return await _sharedClient.SendAsync(request);
     }
+
     public static async Task<HttpResponseMessage?> GetCrewCalls(int crewId)
     {
         using var request = new HttpRequestMessage();
@@ -23,6 +24,7 @@ public class ApiHelper
 
         return await _sharedClient.SendAsync(request);
     }
+
     public static async Task<HttpResponseMessage?> CreateContracts(params Contract[] contracts)
     {
         using var request = new HttpRequestMessage();
@@ -55,6 +57,24 @@ public class ApiHelper
                 request.RequestUri = new Uri($"{_baseAddress}/contracts/user={id}");
             }
         }
+
+        return await _sharedClient.SendAsync(request);
+    }
+    public static async Task<HttpResponseMessage?> DeleteContracts(params int[] ids)
+    {
+        using var request = new HttpRequestMessage();
+        request.RequestUri = new Uri($"{_baseAddress}/contracts");
+        request.Method = HttpMethod.Delete;
+        request.Content = JsonContent.Create(ids);
+
+        return await _sharedClient.SendAsync(request);
+    }
+    public static async Task<HttpResponseMessage?> UpdateContract(Contract contract)
+    {
+        using var request = new HttpRequestMessage();
+        request.RequestUri = new Uri($"{_baseAddress}/contracts");
+        request.Method = HttpMethod.Put;
+        request.Content = JsonContent.Create(contract);
 
         return await _sharedClient.SendAsync(request);
     }
