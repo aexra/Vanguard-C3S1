@@ -19,7 +19,7 @@ public class ApiHelper
     public static async Task<HttpResponseMessage?> GetCrewCalls(int crewId)
     {
         using var request = new HttpRequestMessage();
-        request.RequestUri = new Uri($"{_baseAddress}/crew/{crewId}/calls");
+        request.RequestUri = new Uri($"{_baseAddress}/crews/{crewId}/calls");
         request.Method = HttpMethod.Get;
 
         return await _sharedClient.SendAsync(request);

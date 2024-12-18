@@ -8,4 +8,9 @@ public sealed partial class MyCrewCallsPage : Page
         ViewModel = App.GetService<MyCrewCallsPageViewModel>();
         this.InitializeComponent();
     }
+
+    private async void UpdateContractsListBtn_Click(object sender, RoutedEventArgs e)
+    {
+        await ViewModel.LoadAsync();
+    }
 }

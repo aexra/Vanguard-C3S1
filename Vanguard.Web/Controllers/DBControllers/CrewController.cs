@@ -17,7 +17,7 @@ public class CrewController : ControllerBase
     }
 
     [HttpGet("{crewid}/calls")]
-    public async Task<IActionResult> GetCrewCalls([FromRoute] string crewid)
+    public async Task<IActionResult> GetCrewCalls([FromRoute] int crewid)
     {
         var result = await _context.Database.SqlQuery<CrewCall>(@$"
             SELECT * FROM CrewCalls
@@ -28,7 +28,7 @@ public class CrewController : ControllerBase
     }
 
     [HttpPost("{crewid}/calls")]
-    public async Task<IActionResult> CreateCrewCalls([FromRoute] string crewid, [FromBody] List<CrewCall> calls)
+    public async Task<IActionResult> CreateCrewCalls([FromRoute] int crewid, [FromBody] List<CrewCall> calls)
     {
         if (calls.Count < 1) return BadRequest();
 

@@ -8,7 +8,4 @@ public partial class CrewCall
     public DateTime? DateTime { get; set; }
     public int CrewId { get; set; }
     public int ContractId { get; set; }
-
-    public virtual Contract Contract { get; set; } = null!;
-    public virtual Crew Crew { get; set; } = null!;
 }
