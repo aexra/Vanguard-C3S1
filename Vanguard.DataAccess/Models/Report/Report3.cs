@@ -1,9 +1,11 @@
-﻿namespace Vanguard.DataAccess.Models;
+﻿using Vanguard.DataAccess.Enums;
+
+namespace Vanguard.DataAccess.Models;
 public class Report3
 {
-    public int CrewId { get; set; }
     public string Name { get; set; }
-    public int LeaderId { get; set; }
+    public CrewCallStatus CallType { get; set; }
+    public int ContractId { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string MiddleName { get; set; }
