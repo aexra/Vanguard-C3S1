@@ -23,13 +23,13 @@ public sealed partial class AllContractsPage : Page
 
     }
 
-    private void DeleteContractMFI_Click(object sender, RoutedEventArgs e)
+    private async void DeleteContractMFI_Click(object sender, RoutedEventArgs e)
     {
         var menuFlyoutItem = sender as MenuFlyoutItem;
 
         if (menuFlyoutItem?.DataContext is Contract c)
         {
-
+            await ViewModel.DeleteAsync(c);
         }
     }
 

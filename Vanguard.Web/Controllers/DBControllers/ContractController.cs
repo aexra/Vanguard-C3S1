@@ -51,7 +51,7 @@ public class ContractController : ControllerBase
     [HttpPut]
     public async Task<IActionResult> UpdateContract([FromBody] Contract contract)
     {
-        var result = await _context.Database.SqlQuery<Contract>(@$"
+        var result = await _context.Database.SqlQueryRaw<Contract>(@$"
             UPDATE Contracts
             SET OrganizationId = {contract.OrganizationId},
                 OwnerId = {contract.OwnerId},
@@ -80,18 +80,20 @@ public class ContractController : ControllerBase
 
         sql = sql[..^1];
 
-        var result = _context.Database.SqlQuery<string>($@"{sql}");
+        var result = _context.Database.SqlQueryRaw<string>(@$"{sql}");
 
         return Ok(result);
     }
 
     [HttpDelete]
-    public async Task<IActionResult> DeleteContracts([FromBody] int[] ids)
+    public async Task<IActionResult> DeleteContracts([FromBody] List<int> ids)
     {
-        var result = _context.Database.SqlQuery<string>(@$"
+        var sql = @$"
             DELETE FROM Contracts
-            WHERE ContractId = ANY('{{{string.Join(", ", ids)}}}')
-        ");
+            WHERE ContractId IN({ string.Join(", ", ids)})
+        ";
+
+        var result = _context.Database.SqlQueryRaw<string>(@$"{sql}");
 
         return Ok(result);
     }

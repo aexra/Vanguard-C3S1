@@ -30,6 +30,11 @@ public partial class AllContractsPageViewModel : ObservableObject
 
     public async Task DeleteAsync(Contract c)
     {
+        var response = await ApiHelper.DeleteContracts(c.ContractId);
 
+        if (response != null && response.IsSuccessStatusCode)
+        {
+            Contracts.Remove(c);
+        }
     }
 }

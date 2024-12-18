@@ -25,7 +25,7 @@ public class ApiHelper
         return await _sharedClient.SendAsync(request);
     }
 
-    public static async Task<HttpResponseMessage?> CreateContracts(params Contract[] contracts)
+    public static async Task<HttpResponseMessage?> CreateContracts(params List<Contract> contracts)
     {
         using var request = new HttpRequestMessage();
         request.RequestUri = new Uri($"{_baseAddress}/contracts");
@@ -60,7 +60,7 @@ public class ApiHelper
 
         return await _sharedClient.SendAsync(request);
     }
-    public static async Task<HttpResponseMessage?> DeleteContracts(params int[] ids)
+    public static async Task<HttpResponseMessage?> DeleteContracts(params List<int> ids)
     {
         using var request = new HttpRequestMessage();
         request.RequestUri = new Uri($"{_baseAddress}/contracts");
