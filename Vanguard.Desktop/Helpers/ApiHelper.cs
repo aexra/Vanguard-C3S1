@@ -1,4 +1,7 @@
-﻿namespace Vanguard.App.Helpers;
+﻿using System.Net.Http.Json;
+using Vanguard.DataAccess.Models;
+
+namespace Vanguard.App.Helpers;
 public class ApiHelper
 {
     private static string _baseAddress = "http://127.0.0.1:5231/api";
@@ -17,6 +20,15 @@ public class ApiHelper
         using var request = new HttpRequestMessage();
         request.RequestUri = new Uri($"{_baseAddress}/crew/{crewId}/calls");
         request.Method = HttpMethod.Get;
+
+        return await _sharedClient.SendAsync(request);
+    }
+    public static async Task<HttpResponseMessage?> CreateContracts(params Contract[] contracts)
+    {
+        using var request = new HttpRequestMessage();
+        request.RequestUri = new Uri($"{_baseAddress}/contracts");
+        request.Method = HttpMethod.Post;
+        request.Content = JsonContent.Create(contracts);
 
         return await _sharedClient.SendAsync(request);
     }

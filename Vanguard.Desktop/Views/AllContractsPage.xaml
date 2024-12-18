@@ -16,7 +16,8 @@
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1"
+              RowSpacing="10">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -35,6 +36,18 @@
                 </Button.Content>
             </Button>
 
+            <Button Grid.Row="1"
+                    HorizontalAlignment="Stretch"
+                    x:Name="CreateContractBtn"
+                    Click="CreateContractBtn_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE710;" FontSize="16"/>
+                        <TextBlock x:Uid="CreateContractButton"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
         </Grid>
 
         <Grid Grid.Column="0">
@@ -43,7 +56,36 @@
                                AutoGenerateColumns="True"
                                ItemsSource="{x:Bind ViewModel.Contracts, Mode=OneWay}"
                                GridLinesVisibility="All"
-                               AlternatingRowBackground="#202020"/>
+                               AlternatingRowBackground="#202020">
+                <controls:DataGrid.RowStyle>
+                    <Style TargetType="controls:DataGridRow">
+                        <Setter Property="ContextFlyout">
+                            <Setter.Value>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem x:Name="EditContractMFI"
+                                                    Text="Изменить"
+                                                    Click="EditContractMFI_Click">
+                                        <MenuFlyoutItem.Icon>
+                                            <FontIcon FontFamily="Segoe MDL2 Assets"
+                                                      Glyph="&#xE70F;"
+                                                      FontSize="16"/>
+                                        </MenuFlyoutItem.Icon>
+                                    </MenuFlyoutItem>
+                                    <MenuFlyoutItem x:Name="DeleteContractMFI"
+                                                    Text="Удалить"
+                                                    Click="DeleteContractMFI_Click">
+                                        <MenuFlyoutItem.Icon>
+                                            <FontIcon FontFamily="Segoe MDL2 Assets"
+                                                      Glyph="&#xE74D;"
+                                                      FontSize="16"/>
+                                        </MenuFlyoutItem.Icon>
+                                    </MenuFlyoutItem>
+                                </MenuFlyout>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </controls:DataGrid.RowStyle>
+            </controls:DataGrid>
             
         </Grid>
         
