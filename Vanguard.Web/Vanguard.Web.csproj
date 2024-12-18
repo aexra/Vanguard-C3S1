@@ -21,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\IdentityBaseModel\IdentityBase\IdentityBase.csproj" />
     <ProjectReference Include="..\Vanguard.DataAccess\Vanguard.DataAccess.csproj" />
   </ItemGroup>
