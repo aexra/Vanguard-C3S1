@@ -87,7 +87,7 @@ public class ContractController : ControllerBase
             WHERE ContractId IN({ string.Join(", ", ids)})
         ";
 
-        var result = _context.Database.SqlQuery<string>(@$"{sql}");
+        var result = _context.Database.SqlQueryRaw<string>(@$"{sql}");
 
         return Ok(result);
     }

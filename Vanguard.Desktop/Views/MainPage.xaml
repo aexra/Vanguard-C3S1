@@ -42,6 +42,11 @@
             </NavigationView.Header>
             <Frame x:Name="NavFrame" />
         </NavigationView>
+        <StackPanel MinWidth="340"
+                    dev:Growl.GrowlParent="True"
+                    HorizontalAlignment="Right"
+                    Grid.Row="1"
+                    Margin="10"/>
     </Grid>
 </Page>
 

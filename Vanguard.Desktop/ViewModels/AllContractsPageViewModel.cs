@@ -35,6 +35,11 @@ public partial class AllContractsPageViewModel : ObservableObject
         if (response != null && response.IsSuccessStatusCode)
         {
             Contracts.Remove(c);
+            Growl.Success("Успешно", $"Удален контракт {c.ContractId} с организацией {c.OrganizationId}");
+        }
+        else
+        {
+            Growl.Error("Ошибка сервера", "Операция прервана");
         }
     }
 
@@ -45,6 +50,11 @@ public partial class AllContractsPageViewModel : ObservableObject
         if (response != null && response.IsSuccessStatusCode)
         {
             Contracts.Add(c);
+            Growl.Success("Успешно", $"Контракт успешно создан для организации {c.OrganizationId}");
+        }
+        else
+        {
+            Growl.Error("Ошибка сервера", "Операция прервана");
         }
     }
 
@@ -55,6 +65,10 @@ public partial class AllContractsPageViewModel : ObservableObject
         if (response != null && response.IsSuccessStatusCode)
         {
             await LoadAsync();
+        }
+        else
+        {
+            Growl.Error("Ошибка сервера", "Операция прервана");
         }
     }
 }

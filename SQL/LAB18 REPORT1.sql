@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS OrgsOwners;
+DROP TABLE IF EXISTS OrgsAlarmsCount;
+DROP TABLE IF EXISTS Report1;
+
 CREATE TEMP TABLE IF NOT EXISTS OrgsOwners AS
 select organizationid, name, type, ownerid from organizations;
 

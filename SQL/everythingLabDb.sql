@@ -1,8 +1,6 @@
 DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
 
--- СОЗДАЮ ВСЕ ТАБЛИЦЫ БД
-
 CREATE TABLE IF NOT EXISTS Users (
 	UserId SERIAL PRIMARY KEY,
 	FirstName TEXT,

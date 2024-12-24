@@ -15,8 +15,6 @@ public partial class MyCrewCallsPageViewModel : ObservableObject
     {
         Calls.Clear();
 
-        
-
         if (!int.TryParse(Id, out var parsedId))
         {
             return;

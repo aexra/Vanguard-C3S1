@@ -7,4 +7,3 @@ public sealed partial class HomeLandingPage : Page
         this.InitializeComponent();
     }
 }
-

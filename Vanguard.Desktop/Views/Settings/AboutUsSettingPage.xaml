@@ -29,13 +29,19 @@
                                     Spacing="5">
                             <TextBlock Text="Related Links" />
                             <HyperlinkButton Content="Source Code"
-                                             NavigateUri="https://github.com/Ghost1372/DevWinUI" />
+                                             NavigateUri="https://github.com/aexra/Vanguard-C3S1" />
                             <HyperlinkButton Content="Release Notes"
-                                             NavigateUri="https://github.com/Ghost1372/DevWinUI/releases" />
+                                             NavigateUri="https://github.com/aexra/Vanguard-C3S1/releases" />
                         </StackPanel>
                     </dev:SettingsCard>
                 </dev:SettingsExpander.Items>
             </dev:SettingsExpander>
+            <Button x:Name="GrowlButton1"
+                    Click="GrowlButton1_Click"/>
+            <Button x:Name="GrowlButton2"
+                    Click="GrowlButton2_Click"/>
+            <Button x:Name="GrowlButton3"
+                    Click="GrowlButton3_Click"/>
         </StackPanel>
     </ScrollView>
 </Page>

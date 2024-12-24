@@ -27,19 +27,19 @@
         {
           "UniqueId": "Vanguard.Desktop.Views.Reports.Report1Page",
           "Title": "Отчет 1",
-          "Subtitle": "",
+          "Subtitle": "Отчет о безопасности",
           "IconGlyph": "\uE729"
         },
         {
           "UniqueId": "Vanguard.Desktop.Views.Reports.Report2Page",
           "Title": "Отчет 2",
-          "Subtitle": "",
+          "Subtitle": "Топ-5 самых прибыльных и безопасных организаций-клиентов",
           "IconGlyph": "\uE729"
         },
         {
           "UniqueId": "Vanguard.Desktop.Views.Reports.Report3Page",
           "Title": "Отчет 3",
-          "Subtitle": "",
+          "Subtitle": "Рабочие вызовы бригад и контакты их бригадиров",
           "IconGlyph": "\uE729"
         }
       ]
@@ -53,7 +53,7 @@
         {
           "UniqueId": "Vanguard.Desktop.Views.AllContractsPage",
           "Title": "Все контракты",
-          "Subtitle": "",
+          "Subtitle": "Подписание, обновление и расторжение контрактов с организациями",
           "IconGlyph": "\uE7EF"
         }
       ]
@@ -67,7 +67,7 @@
         {
           "UniqueId": "Vanguard.Desktop.Views.MyContractsPage",
           "Title": "Мои контракты",
-          "Subtitle": "",
+          "Subtitle": "Просмотр подписанных с отделом контрактов",
           "IconGlyph": "\uE9F9"
         }
       ]
@@ -81,7 +81,7 @@
         {
           "UniqueId": "Vanguard.Desktop.Views.MyCrewCallsPage",
           "Title": "Рабочие бригады",
-          "Subtitle": "",
+          "Subtitle": "Информация о рабочей бригаде",
           "IconGlyph": "\uE80B"
         }
       ]

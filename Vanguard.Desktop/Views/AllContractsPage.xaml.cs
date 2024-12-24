@@ -38,10 +38,13 @@ public sealed partial class AllContractsPage : Page
         {
             var c = content.ViewModel.ToContract();
 
-            if (c != null)
+            if (c == null || c.IsLegalEntity && c.OrganizationId == null || !c.IsLegalEntity && c.OwnerId == null || c.Address == null)
             {
-                await ViewModel.CreateAsync(c);
+                Growl.Error("Операция отклонена", "Введенные данные содержат ошибку");
+                return;
             }
+
+            await ViewModel.CreateAsync(c);
         }
     }
 

@@ -26,7 +26,7 @@ public partial class AppUpdateSettingViewModel : ObservableObject
     public AppUpdateSettingViewModel()
     {
         CurrentVersion = $"Current Version {ProcessInfoHelper.VersionWithPrefix}";
-        LastUpdateCheck = Settings.LastUpdateCheck;
+        //LastUpdateCheck = Settings.LastUpdateCheck;
     }
 
     [RelayCommand]
@@ -44,7 +44,7 @@ public partial class AppUpdateSettingViewModel : ObservableObject
                 string username = "";
                 string repo = "";
                 LastUpdateCheck = DateTime.Now.ToShortDateString();
-                Settings.LastUpdateCheck = DateTime.Now.ToShortDateString();
+                //Settings.LastUpdateCheck = DateTime.Now.ToShortDateString();
                 var update = await UpdateHelper.CheckUpdateAsync(username, repo, new Version(ProcessInfoHelper.Version));
             }
             catch (Exception ex)
@@ -66,7 +66,7 @@ public partial class AppUpdateSettingViewModel : ObservableObject
     private async Task GoToUpdateAsync()
     {
         //Todo: Change Uri
-        await Launcher.LaunchUriAsync(new Uri("https://github.com/Ghost1372/DevWinUI/releases"));
+        await Launcher.LaunchUriAsync(new Uri("https://github.com/aexra/Vanguard-C3S1/releases"));
     }
 
     [RelayCommand]
