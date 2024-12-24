@@ -18,11 +18,14 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0"
-                Spacing="10"
-                Orientation="Horizontal">
+                    Spacing="10"
+                    Orientation="Horizontal">
             <Button x:Name="SearchButton"
-                Content="Рассчитать"
-                Click="SearchButton_Click"/>
+                    Content="Рассчитать"
+                    Click="SearchButton_Click"/>
+            <Button x:Name="ExportButton"
+                    Content="Экспорт"
+                    Command="{x:Bind ViewModel.ExportReportCommand}"/>
         </StackPanel>
 
         <controls:DataGrid x:Name="DG1"
